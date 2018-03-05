@@ -6,6 +6,10 @@ pipeline {
          string(name: 'tomcat_prod', defaultValue: '18.221.65.150', description: 'Production Server')
     }
 
+    environment{
+        PATH = "/Applications/XAMPP/htdocs/apache-maven-3.5.2/bin/:$PATH"
+    }
+
     triggers {
          pollSCM('* * * * *')
      }
